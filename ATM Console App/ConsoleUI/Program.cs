@@ -9,6 +9,7 @@ public class Program
         switch (menuKey)
         {
             case 1: HandleDeposit(); break;
+            case 2: HandleWithdraw(); break;
             default:
                 break;
         }
@@ -45,6 +46,27 @@ public class Program
         user.DepositMoney(amount);
 
         Console.WriteLine("\n\t\tThank for trusting us...");
+        Console.WriteLine($"\t\tYour new balance is {user.Balance}");
+
+    }
+
+    public static void HandleWithdraw(ATMUser user)
+    {
+        Console.Clear();
+        Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
+        Console.Write("\n\t\tEnter amount you would like to Withdraw: ");
+
+        if (!(double.TryParse(Console.ReadLine(), out double amount)))
+            HandleWithdraw(user);
+
+        if (!user.WithdrawMoney(amount))
+        {
+            Console.WriteLine($"Unfortunately you have insufficient funds to withdraw {amount}");
+            Console.WriteLine($"Your current balance is: {user.Balance}");
+        }
+
+        Console.WriteLine("\n\t\tThank for trusting us...");
+        Console.WriteLine("\t\tPlease take you cash...");
         Console.WriteLine($"\t\tYour new balance is {user.Balance}");
 
     }
