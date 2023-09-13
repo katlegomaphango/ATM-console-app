@@ -10,6 +10,7 @@ public class Program
         {
             case 1: HandleDeposit(); break;
             case 2: HandleWithdraw(); break;
+            case 3: HandleShowBalance(); break;
             default:
                 break;
         }
@@ -70,6 +71,17 @@ public class Program
         Console.WriteLine($"\t\tYour new balance is {user.Balance}");
 
     }
+
+    public static void HandleShowBalance(ATMUser user)
+    {
+        Console.Clear();
+        Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
+        Console.WriteLine($"\n\t\tWelcome, your balance is R {user.Balance.ToString("C")}");
+
+        Console.WriteLine("\n\t\tThank for trusting us...");
+    }
+
+
 
 
 }
