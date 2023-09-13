@@ -22,4 +22,15 @@ public class ATMUser
     public string LastName { get { return lastName; } set { lastName = value; } }
     public int PinNumber { get { return pinNumber; } set {  pinNumber = value; } }
     public double Balance { get { return balance; } set { balance = value; } }
+
+    public void DepositMoney(double amount)
+    {
+        this.balance += amount;
+    }
+
+    public void WithdrawMoney(double amount)
+    {
+        this.balance -= amount;
+    }
+
 }
