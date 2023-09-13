@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "ATMClassLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ATMClassLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ATMClassLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ATMClassLibrary/1.0.0": {
+      "type": "project",
+      "path": "../ATMClassLibrary/ATMClassLibrary.csproj",
+      "msbuildProject": "../ATMClassLibrary/ATMClassLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "ATMClassLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\mphan\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\mphan\\OneDrive\\Documents\\WebDev\\ATM-console-app\\ATM Console App\\ATMClassLibrary\\ATMClassLibrary.csproj": {
+              "projectPath": "C:\\Users\\mphan\\OneDrive\\Documents\\WebDev\\ATM-console-app\\ATM Console App\\ATMClassLibrary\\ATMClassLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

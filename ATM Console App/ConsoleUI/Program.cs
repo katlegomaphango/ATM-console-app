@@ -1,9 +1,17 @@
-﻿public class Program
+﻿using ATMClassLibrary;
+
+public class Program
 {
     private static void Main(string[] args)
     {
         int menuKey = Menu();
-        Console.WriteLine(menuKey);
+
+        switch (menuKey)
+        {
+            case 1: HandleDeposit(); break;
+            default:
+                break;
+        }
     }
 
     private static int Menu()
@@ -23,5 +31,21 @@
         }
 
         return key;
+    }
+
+    public static void HandleDeposit(ATMUser user)
+    {
+        Console.Clear();
+        Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
+        Console.Write("\n\t\tEnter amount you would like to deposit: ");
+
+        if(!(double.TryParse(Console.ReadLine(), out double amount)))
+            HandleDeposit(user);
+
+        user.DepositMoney(amount);
+
+        Console.WriteLine("\n\t\tThank for trusting us...");
+        Console.WriteLine($"\t\tYour new balance is {user.Balance}");
+
     }
 }
