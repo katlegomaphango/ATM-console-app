@@ -30,15 +30,22 @@ public class ATMUser
 
     public Boolean WithdrawMoney(double amount)
     {
-        double temp = balance;
-        double result = this.balance - amount;
+        if (amount > this.balance)
+            return false;
 
-        if (result > 0)
-        {
-            this.balance = result;
-            return true;
-        } 
-        return false;        
+        this.balance -= amount;
+        return true;
+
+
+        //double temp = balance;
+        //double result = this.balance - amount;
+
+        //if (result > 0)
+        //{
+        //    this.balance = result;
+        //    return true;
+        //} 
+        //return false;        
         
     }
 
