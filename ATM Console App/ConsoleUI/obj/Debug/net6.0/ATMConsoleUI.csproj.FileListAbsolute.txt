@@ -1,0 +1,14 @@
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMConsoleUI.exe
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMConsoleUI.deps.json
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMConsoleUI.runtimeconfig.json
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMConsoleUI.dll
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMConsoleUI.pdb
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.AssemblyInfoInputs.cache
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.AssemblyInfo.cs
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.csproj.CoreCompileInputs.cache
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.dll
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\refint\ATMConsoleUI.dll
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.pdb
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.genruntimeconfig.cache
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ref\ATMConsoleUI.dll

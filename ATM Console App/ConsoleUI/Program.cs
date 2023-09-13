@@ -2,19 +2,26 @@
 {
     private static void Main(string[] args)
     {
-        char menuKey = Menu();
-        
+        int menuKey = Menu();
+        Console.WriteLine(menuKey);
     }
 
-    private static char Menu()
+    private static int Menu()
     {
+        Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
         Console.WriteLine("\n\n\t\tPlease choose an option ");
         Console.WriteLine("\n\t\t1: Deposit");
         Console.WriteLine("\t\t2: Withdraw");
         Console.WriteLine("\t\t3: Show Balance");
-        Console.Write("\t\t4: Exit");
+        Console.WriteLine("\t\t4: Exit");
+        Console.Write("\t\t");
 
-        return Console.ReadKey().KeyChar;
+        if(!(int.TryParse(Console.ReadLine(), out int key)))
+        {
+            Menu();
+        }
+
+        return key;
     }
 }
