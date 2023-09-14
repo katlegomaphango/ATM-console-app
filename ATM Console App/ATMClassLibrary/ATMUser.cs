@@ -23,30 +23,5 @@ public class ATMUser
     public int PinNumber { get { return pinNumber; } set {  pinNumber = value; } }
     public double Balance { get { return balance; } set { balance = value; } }
 
-    public void DepositMoney(double amount)
-    {
-        this.balance += amount;
-    }
-
-    public Boolean WithdrawMoney(double amount)
-    {
-        if (amount > this.balance)
-            return false;
-
-        this.balance -= amount;
-        return true;
-
-
-        //double temp = balance;
-        //double result = this.balance - amount;
-
-        //if (result > 0)
-        //{
-        //    this.balance = result;
-        //    return true;
-        //} 
-        //return false;        
-        
-    }
 
 }
