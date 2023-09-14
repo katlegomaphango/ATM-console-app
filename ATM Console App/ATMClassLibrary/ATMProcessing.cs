@@ -2,11 +2,17 @@
 
 public class ATMProcessing
 {
-    public static bool CardNumExist(int cardNum)
+    public static bool ValidateCardCredentials(int credential)
     {
-        ATMUser user = ATMDataBase.ATMUsers.FirstOrDefault(u => u.CardNumber == cardNum);
-        
-        if(user == null) 
+        ATMUser user;
+        int length = credential.ToString().Length;
+
+        if (length == 4)
+            user = ATMDataBase.ATMUsers.FirstOrDefault(u => u.PinNumber == credential);
+        else
+            user = ATMDataBase.ATMUsers.FirstOrDefault(u => u.CardNumber == credential);
+
+        if (user == null) 
             return false;
         else
             return true;
