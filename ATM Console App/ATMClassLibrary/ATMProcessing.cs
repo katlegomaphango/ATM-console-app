@@ -2,6 +2,16 @@
 
 public class ATMProcessing
 {
+    public static bool CardNumExist(int cardNum)
+    {
+        ATMUser user = ATMDataBase.ATMUsers.FirstOrDefault(u => u.CardNumber == cardNum);
+        
+        if(user == null) 
+            return false;
+        else
+            return true;
+    }
+
     public static void DepositMoney(ATMUser user, double amount)
     {
         user.Balance += amount;
