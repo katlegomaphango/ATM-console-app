@@ -4,17 +4,73 @@ public class Program
 {
     private static void Main(string[] args)
     {
+        HandleValidateCredentials();
+
+
         int menuKey = Menu();
 
-        switch (menuKey)
-        {
-            case 1: HandleDeposit(); break;
-            case 2: HandleWithdraw(); break;
-            case 3: HandleShowBalance(); break;
-            default:
-                break;
-        }
+        //switch (menuKey)
+        //{
+        //    case 1: HandleDeposit(); break;
+        //    case 2: HandleWithdraw(); break;
+        //    case 3: HandleShowBalance(); break;
+        //    default: Menu();
+        //        break;
+        //}
     }
+
+    private static void HandleValidateCredentials()
+    {
+        Console.Clear();
+        Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
+        Console.WriteLine("\n\t\tPlease enter your bank card (number):");
+        Console.Write("\t\t");
+
+        while (true)
+        {
+            try
+            {
+                double cardNum = double.Parse(Console.ReadLine());
+                break;
+            }
+            catch
+            {
+                Console.WriteLine("\t\tPlease enter valid card (number)...");
+                Console.Write("\t\t");
+            }
+        }
+
+        int AttemptsCount = 3;
+        Console.WriteLine("\n\t\tPlease enter your pin number:");
+        Console.Write("\t\t");
+
+        while (AttemptsCount != 0)
+        {
+            try
+            {
+                int pin = int.Parse(Console.ReadLine());
+                AttemptsCount--;
+                break;
+            }
+            catch
+            {
+                AttemptsCount--;
+                Console.WriteLine("\t\tWrong pin. Please try again...");
+                Console.Write("\t\t");
+            }
+            
+        }
+
+        if(AttemptsCount == 0)
+        {
+            Console.WriteLine("\n\t\tYou entered wrong pin 3 times, your account will be locked please contact you nearest branch...");
+            Console.ReadKey();
+            
+            Environment.Exit(0);
+        }
+
+    }
+
 
     private static int Menu()
     {
@@ -44,7 +100,7 @@ public class Program
         if(!(double.TryParse(Console.ReadLine(), out double amount)))
             HandleDeposit(user);
 
-        user.DepositMoney(amount);
+        //user.DepositMoney(amount);
 
         Console.WriteLine("\n\t\tThank for trusting us...");
         Console.WriteLine($"\t\tYour new balance is {user.Balance}");
@@ -60,11 +116,11 @@ public class Program
         if (!(double.TryParse(Console.ReadLine(), out double amount)))
             HandleWithdraw(user);
 
-        if (!user.WithdrawMoney(amount))
-        {
-            Console.WriteLine($"Unfortunately you have insufficient funds to withdraw {amount}");
-            Console.WriteLine($"Your current balance is: {user.Balance}");
-        }
+        //if (!user.WithdrawMoney(amount))
+        //{
+        //    Console.WriteLine($"Unfortunately you have insufficient funds to withdraw {amount}");
+        //    Console.WriteLine($"Your current balance is: {user.Balance}");
+        //}
 
         Console.WriteLine("\n\t\tThank for trusting us...");
         Console.WriteLine("\t\tPlease take you cash...");

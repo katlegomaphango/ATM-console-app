@@ -12,3 +12,7 @@ C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\Console
 C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.pdb
 C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.genruntimeconfig.cache
 C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ref\ATMConsoleUI.dll
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMClassLibrary.dll
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\bin\Debug\net6.0\ATMClassLibrary.pdb
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.csproj.AssemblyReference.cache
+C:\Users\mphan\OneDrive\Documents\WebDev\ATM-console-app\ATM Console App\ConsoleUI\obj\Debug\net6.0\ATMConsoleUI.csproj.CopyComplete
