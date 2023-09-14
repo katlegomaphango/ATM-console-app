@@ -2,6 +2,11 @@
 
 public class ATMProcessing
 {
+    public static ATMUser GetATMUser(int cardNumber, int pinNumber)
+    {
+        return ATMDataBase.ATMUsers.FirstOrDefault(user => user.CardNumber == cardNumber && user.PinNumber == pinNumber);
+    }
+
     public static bool ValidateCardCredentials(int credential)
     {
         ATMUser user;

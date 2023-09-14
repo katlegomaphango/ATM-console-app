@@ -4,7 +4,7 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        double bankNum = HandleValidateBankNumber();
+        int bankNum = HandleValidateBankNumber();
         int pinNum = HandleValidatePinNumber();
 
 
@@ -20,9 +20,9 @@ public class Program
         //}
     }
 
-    private static double HandleValidateBankNumber()
+    private static int HandleValidateBankNumber()
     {
-        double cardNum;
+        int cardNum;
 
         Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
@@ -33,7 +33,7 @@ public class Program
         {
             try
             {
-                cardNum = double.Parse(Console.ReadLine());
+                cardNum = int.Parse(Console.ReadLine());
                 break;
             }
             catch
