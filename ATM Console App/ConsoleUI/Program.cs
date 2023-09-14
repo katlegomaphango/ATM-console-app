@@ -4,7 +4,8 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        HandleValidateCredentials();
+        double bankNum = HandleValidateBankNumber();
+        int pinNum = HandleValidatePinNumber();
 
 
         int menuKey = Menu();
@@ -19,8 +20,10 @@ public class Program
         //}
     }
 
-    private static void HandleValidateCredentials()
+    private static double HandleValidateBankNumber()
     {
+        double cardNum;
+
         Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
         Console.WriteLine("\n\t\tPlease enter your bank card (number):");
@@ -30,7 +33,7 @@ public class Program
         {
             try
             {
-                double cardNum = double.Parse(Console.ReadLine());
+                cardNum = double.Parse(Console.ReadLine());
                 break;
             }
             catch
@@ -40,7 +43,14 @@ public class Program
             }
         }
 
+        return cardNum;
+    }
+
+    private static int HandleValidatePinNumber()
+    {
+        int pin = 0;
         int AttemptsCount = 3;
+
         Console.WriteLine("\n\t\tPlease enter your pin number:");
         Console.Write("\t\t");
 
@@ -48,7 +58,7 @@ public class Program
         {
             try
             {
-                int pin = int.Parse(Console.ReadLine());
+                pin = int.Parse(Console.ReadLine());
                 AttemptsCount--;
                 break;
             }
@@ -58,17 +68,18 @@ public class Program
                 Console.WriteLine("\t\tWrong pin. Please try again...");
                 Console.Write("\t\t");
             }
-            
+
         }
 
-        if(AttemptsCount == 0)
+        if (AttemptsCount == 0)
         {
             Console.WriteLine("\n\t\tYou entered wrong pin 3 times, your account will be locked please contact you nearest branch...");
             Console.ReadKey();
-            
+
             Environment.Exit(0);
         }
 
+        return pin;
     }
 
 
