@@ -11,6 +11,23 @@ public class Program
 
         Menu(user);
 
+        Console.Clear();
+
+        Console.WriteLine($"\n\n\t\tLogging out {user.FirstName} {user.LastName}...");
+        Console.Write("\t\t");
+        Thread.Sleep(2000);
+
+        Console.WriteLine($"\n\t\tSuccessfully logged {user.FirstName} out!?");
+        Thread.Sleep(1000);
+
+        Console.WriteLine("\n\t\tThank you for using our services...");
+        Thread.Sleep(1000);
+
+        Console.WriteLine("\n\t\tBanking made easy... ");
+        Thread.Sleep(1000);
+
+        Console.Write("\t\tThank you. Bye...");
+        Environment.Exit(0);
     }
 
     private static int HandleValidateBankNumber()
@@ -78,7 +95,7 @@ public class Program
     private static void Menu(ATMUser user)
     {
         Console.Clear();
-        Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
+        Console.WriteLine($"\n\n\t\tATM Console Application: Welcome {user.FirstName}...");
         Console.WriteLine("\n\n\t\tPlease choose an option ");
         Console.WriteLine("\n\t\t1: Deposit");
         Console.WriteLine("\t\t2: Withdraw");
@@ -96,6 +113,7 @@ public class Program
             case 1: HandleDeposit(user); Menu(user); break;
             case 2: HandleWithdraw(user); Menu(user); break;
             case 3: HandleShowBalance(user); Menu(user); break;
+            case 4: return; 
             default: Menu(user); break;
         }
     }
