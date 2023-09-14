@@ -4,20 +4,22 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        int bankNum = HandleValidateBankNumber();
+        int cardNum = HandleValidateBankNumber();
         int pinNum = HandleValidatePinNumber();
 
+        ATMUser user = ATMProcessing.GetATMUser(cardNum, pinNum);
 
         int menuKey = Menu();
 
-        //switch (menuKey)
-        //{
-        //    case 1: HandleDeposit(); break;
-        //    case 2: HandleWithdraw(); break;
-        //    case 3: HandleShowBalance(); break;
-        //    default: Menu();
-        //        break;
-        //}
+        switch (menuKey)
+        {
+            case 1: HandleDeposit(user); break;
+            case 2: HandleWithdraw(user); break;
+            case 3: HandleShowBalance(user); break;
+            default:
+                Menu();
+                break;
+        }
     }
 
     private static int HandleValidateBankNumber()
