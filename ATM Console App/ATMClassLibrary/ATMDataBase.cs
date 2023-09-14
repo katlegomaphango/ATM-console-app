@@ -2,7 +2,7 @@
 
 public class ATMDataBase
 {
-    public static readonly List<ATMUser> ATMUsers = new List<ATMUser>()
+    public static readonly List<ATMUser> ATMUsers = new()
     {
         new ATMUser(1835760368, "Gcina", "Mkhonto", 1234, 150.78),
         new ATMUser(1393589365, "Sbu", "Buda", 1235, 0.20),
