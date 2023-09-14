@@ -94,7 +94,7 @@ public class Program
         switch (key)
         {
             case 1: HandleDeposit(user); Menu(user); break;
-            case 2: HandleWithdraw(user); break;
+            case 2: HandleWithdraw(user); Menu(user); break;
             case 3: HandleShowBalance(user); break;
             default: Menu(user); break;
         }
@@ -104,7 +104,7 @@ public class Program
     {
         Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
-        Console.Write("\n\t\tEnter amount you would like to deposit: ");
+        Console.Write("\n\t\tEnter amount you would like to deposit: R ");
 
         if(!(double.TryParse(Console.ReadLine(), out double amount)))
             HandleDeposit(user);
@@ -112,7 +112,7 @@ public class Program
         ATMProcessing.DepositMoney(user, amount);
 
         Console.WriteLine("\n\t\tThank for trusting us...");
-        Console.WriteLine($"\t\tYour new balance is {user.Balance}");
+        Console.WriteLine($"\t\tYour new balance is {user.Balance:C}");
         Console.WriteLine("\t\t");
         Thread.Sleep(3500);
 
@@ -122,21 +122,23 @@ public class Program
     {
         Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
-        Console.Write("\n\t\tEnter amount you would like to Withdraw: ");
+        Console.Write("\n\t\tEnter amount you would like to Withdraw: R ");
 
         if (!(double.TryParse(Console.ReadLine(), out double amount)))
             HandleWithdraw(user);
 
-        //if (!user.WithdrawMoney(amount))
-        //{
-        //    Console.WriteLine($"Unfortunately you have insufficient funds to withdraw {amount}");
-        //    Console.WriteLine($"Your current balance is: {user.Balance}");
-        //}
+        if (!ATMProcessing.WithdrawMoney(user, amount))
+        {
+            Console.WriteLine($"\n\t\tUnfortunately you have insufficient funds to withdraw {amount}");
+            Console.WriteLine($"\t\tYour current balance is: R {user.Balance:C}");
+            Thread.Sleep(3500);
+            return;
+        }
 
         Console.WriteLine("\n\t\tThank for trusting us...");
         Console.WriteLine("\t\tPlease take you cash...");
-        Console.WriteLine($"\t\tYour new balance is {user.Balance}");
-
+        Console.WriteLine($"\t\tYour new balance is R {user.Balance:C}");
+        Thread.Sleep(3500);
     }
 
     public static void HandleShowBalance(ATMUser user)
