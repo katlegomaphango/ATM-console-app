@@ -9,17 +9,8 @@ public class Program
 
         ATMUser user = ATMProcessing.GetATMUser(cardNum, pinNum);
 
-        int menuKey = Menu();
+        Menu(user);
 
-        switch (menuKey)
-        {
-            case 1: HandleDeposit(user); break;
-            case 2: HandleWithdraw(user); break;
-            case 3: HandleShowBalance(user); break;
-            default:
-                Menu();
-                break;
-        }
     }
 
     private static int HandleValidateBankNumber()
@@ -84,8 +75,7 @@ public class Program
         return pin;
     }
 
-
-    private static int Menu()
+    private static void Menu(ATMUser user)
     {
         Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
@@ -98,10 +88,16 @@ public class Program
 
         if(!(int.TryParse(Console.ReadLine(), out int key)))
         {
-            Menu();
+            Menu(user);
         }
 
-        return key;
+        switch (key)
+        {
+            case 1: HandleDeposit(user); Menu(user); break;
+            case 2: HandleWithdraw(user); break;
+            case 3: HandleShowBalance(user); break;
+            default: Menu(user); break;
+        }
     }
 
     public static void HandleDeposit(ATMUser user)
@@ -113,10 +109,12 @@ public class Program
         if(!(double.TryParse(Console.ReadLine(), out double amount)))
             HandleDeposit(user);
 
-        //user.DepositMoney(amount);
+        ATMProcessing.DepositMoney(user, amount);
 
         Console.WriteLine("\n\t\tThank for trusting us...");
         Console.WriteLine($"\t\tYour new balance is {user.Balance}");
+        Console.WriteLine("\t\t");
+        Thread.Sleep(3500);
 
     }
 
