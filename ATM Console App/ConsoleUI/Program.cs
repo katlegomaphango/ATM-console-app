@@ -95,7 +95,7 @@ public class Program
         {
             case 1: HandleDeposit(user); Menu(user); break;
             case 2: HandleWithdraw(user); Menu(user); break;
-            case 3: HandleShowBalance(user); break;
+            case 3: HandleShowBalance(user); Menu(user); break;
             default: Menu(user); break;
         }
     }
@@ -145,12 +145,10 @@ public class Program
     {
         Console.Clear();
         Console.WriteLine("\n\n\t\tATM Console Application: Welcome...");
-        Console.WriteLine($"\n\t\tWelcome, your balance is R {user.Balance.ToString("C")}");
+        Console.WriteLine($"\n\t\tWelcome, your balance is R {user.Balance:C}");
 
         Console.WriteLine("\n\t\tThank for trusting us...");
+        Thread.Sleep(3500);
     }
-
-
-
 
 }
